@@ -1,12 +1,7 @@
 var util = require('util');
 
 function formatTime (time, precision) {
-  // If we're dealing with ms, round up to seconds when time is at least 1 second
-  if (time > 1000 && precision == 'ms') {
-    return (Math.floor(time / 100) / 10) + ' s';
-  } else {
-    return time.toFixed(3) + ' ' + precision;
-  }
+  return Math.floor(time/1e6) + ' ms';
 }
 
 // get time in ns
