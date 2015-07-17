@@ -1,7 +1,14 @@
 var util = require('util');
 
 function formatTime (time, precision) {
-  return Math.floor(time/1e6) + ' ms';
+  var ms = Math.floor(time/1e6);
+  if(ms >= 10){
+    return ms + ' ms';
+  }else{
+    var us = Math.floor(time/1e3);
+    return us + ' us';
+  }
+  
 }
 
 // get time in ns
